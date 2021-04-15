@@ -4,14 +4,12 @@ public class CharacterUtil {
 
     public static void main(String[] args) {
         CharacterUtil util = new CharacterUtil();
-        String result = util.reverse("world".toCharArray());
+        String result = util.reverse("world");
         System.out.println(result);
     }
 
     /**
      *
-     * @param str
-     * @return
      */
     public String reverse(String str) {
         return reverse(str.toCharArray());
@@ -19,8 +17,7 @@ public class CharacterUtil {
 
     /**
      * Memory:  45M, Timing: 1ms
-     * @param charArray
-     * @return
+     *
      */
     public String reverse(char[] charArray) {
         int tail = charArray.length - 1;
