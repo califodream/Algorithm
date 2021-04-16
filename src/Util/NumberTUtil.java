@@ -3,8 +3,7 @@ package Util;
 public class NumberTUtil {
 
     public static void main(String[] args) {
-        int[] a = {2, 4, 1, 2, 7, 8, 4};
-        System.out.println(NumberTUtil.distantPeak(a));
+
     }
 
     /**
@@ -45,7 +44,8 @@ public class NumberTUtil {
     }
 
     /**
-     *
+     * Timing: 20ms Memory: 11M
+     * TODO: 有待优化
      */
     public static int distantPeak(int[] numArray) {
         int head = numArray.length;
