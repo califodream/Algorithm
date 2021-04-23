@@ -10,6 +10,8 @@ public class CharacterUtil {
     }
 
     /**
+     * Nowcoder NC103
+     * Memory: 9M Timing: 16ms
      * 将字符串反转
      */
     public static String reverse(String str) {
@@ -17,7 +19,8 @@ public class CharacterUtil {
     }
 
     /**
-     * Memory:  45M, Timing: 1ms
+     * Leetcode 344
+     * Memory: 45M, Timing: 1ms
      * 将字符串数组反转
      */
     public static String reverse(char[] charArray) {
@@ -35,6 +38,7 @@ public class CharacterUtil {
     }
 
     /**
+     * Nowcoder NC141
      * Timing: 90ms Memory: 21M
      * 属于Easy版本，该字符串中不包括空格，同时该算法大小写敏感
      */
@@ -47,6 +51,7 @@ public class CharacterUtil {
     }
 
     /**
+     * Leetcode 125
      * Timing: 2ms Memory: 38.4MB
      */
     public static boolean isPalindromeForCaseUnSenseNBlank(String s) {

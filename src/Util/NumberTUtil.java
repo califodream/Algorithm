@@ -11,8 +11,10 @@ public class NumberTUtil {
     }
 
     /**
-     * Memory: 35.6M
+     * LeetCode-剑指offer 10-I
+     * Memory: 35.6MB
      * No Cache
+     * 输出斐波那契数列中指定索引里的数值
      */
     public static int fibonacci(int n) {
         int back = 0;
@@ -48,8 +50,10 @@ public class NumberTUtil {
     }
 
     /**
-     * Timing: 20ms Memory: 11M
+     * Nowcoder NC107
+     * Timing: 20ms Memory: 11MB
      * TODO: 有待优化
+     * 获得数组中最远的山峰
      */
     public static int distantPeak(int[] numArray) {
         int head = numArray.length;
@@ -80,6 +84,12 @@ public class NumberTUtil {
         return index;
     }
 
+    /**
+     * Nowcoder NC38
+     * 螺旋输出矩阵中的值
+     * Timing: 33ms
+     * Memory: 10.8MB
+     */
     public static ArrayList<Integer> spiralOrder(int[][] matrix) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return new ArrayList<>();
@@ -104,6 +114,12 @@ public class NumberTUtil {
         return orderList;
     }
 
+    /**
+     * Nowcoder NC110
+     * Timing: 25ms
+     * Memory: 10.6MB
+     * 旋转数组
+     */
     public static int[] spinArray(int step, int[] array) {
         int length = array.length;
         step = step % length;
