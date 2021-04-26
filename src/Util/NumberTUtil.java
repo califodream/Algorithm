@@ -2,12 +2,13 @@ package Util;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class NumberTUtil {
 
     public static void main(String[] args) {
-        int[] matrix = {1, 2, 3, 4, 5, 6, 7};
-        System.out.println(Arrays.toString(NumberTUtil.spinArray(2, matrix)));
+        int[] matrix = {20, 70, 110, 150};
+        System.out.println(Arrays.toString(NumberTUtil.twoSums(matrix, 90)));
     }
 
     /**
@@ -161,5 +162,19 @@ public class NumberTUtil {
      */
     public static int gcd(int x, int y) {
         return y > 0 ? gcd(y, x % y) : x;
+    }
+
+    /**
+     * Timing: 28ms Memory: 10MB
+     */
+    public static int[] twoSums(int[] array, int target) {
+        int index = 1;
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        for (; index <= array.length; index++) {
+            if (hashMap.containsKey(target - array[index - 1]))
+                break;
+            hashMap.put(array[index - 1], index);
+        }
+        return new int[]{hashMap.get(target - array[index - 1]), index};
     }
 }
