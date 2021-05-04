@@ -3,12 +3,16 @@ package Util;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 public class NumberTUtil {
 
     public static void main(String[] args) {
-        int[] matrix = {20, 70, 110, 150};
-        System.out.println(Arrays.toString(NumberTUtil.twoSums(matrix, 90)));
+        int[] a = {2, 6, 4, 8, 10, 9, 15};
+        int[] b = {1, 2, 3, 4};
+        int[] c = {0};
+        int[] d = {2, 4, 10, 8};
+        System.out.println(unsortedSubArray(a));
     }
 
     /**
@@ -176,5 +180,33 @@ public class NumberTUtil {
             hashMap.put(array[index - 1], index);
         }
         return new int[]{hashMap.get(target - array[index - 1]), index};
+    }
+
+    public static int unsortedSubArray(int[] array) {
+        int head = 0;
+        int tail = array.length;
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        boolean check = false;
+        for (int index = 1; index < tail; index++) {
+            if (array[index] < array[index - 1]) {
+                check = true;
+            }
+            if (check) {
+                min = Math.min(min, array[index]);
+                max = Math.max(max, array[index - 1]);
+                check = false;
+            }
+        }
+        int left = 0, right = tail - 1;
+        for (; left < tail; left++) {
+            if (array[left] > min)
+                break;
+        }
+        for (; right >= head; right--) {
+            if (array[right] < max)
+                break;
+        }
+        return right - 1 >= 0 ? right - left + 1 : 0;
     }
 }
