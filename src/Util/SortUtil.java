@@ -11,7 +11,7 @@ public class SortUtil {
         int[] array1 = new int[]{8, 6, 2, 3, 1, 5, 7, 4};
         int[] array2 = new int[]{8, 6, 2, 2, 1};
         int[] array3 = new int[]{1, 2, 8, 6};
-        insertedSortE2(array1);
+        mergeSort(array1);
         System.out.println(Arrays.toString(array1));
     }
 
@@ -57,7 +57,14 @@ public class SortUtil {
     }
 
     /**
-     *
+     * 归并排序
+     */
+    public static void mergeSort(int[] array) {
+        splitOfMergeSort(array, 0, array.length - 1);
+    }
+
+    /**
+     * 归并排序中的分割操作
      */
     public static void splitOfMergeSort(int[] array, int left, int right) {
         if (left >= right)
@@ -70,10 +77,26 @@ public class SortUtil {
     }
 
     /**
-     *
+     * 归并排序中的归并操作
      */
     public static void mergeOfMergeSort(int[] array, int left, int mid, int right) {
-
+        int[] tempArray = Arrays.copyOfRange(array, left, right + 1);
+        int i = left, j = mid + 1;
+        for (int k = left; k <= right; k++) {
+            if (j > right) {
+                array[k] = tempArray[i - left];
+                i++;
+            } else if (i > mid) {
+                array[k] = tempArray[j - left];
+                j++;
+            } else if (tempArray[i - left] < tempArray[j - left]) {
+                array[k] = tempArray[i - left];
+                i++;
+            } else if (tempArray[i - left] > tempArray[j - left]) {
+                array[k] = tempArray[j - left];
+                j++;
+            }
+        }
     }
 
     /**
